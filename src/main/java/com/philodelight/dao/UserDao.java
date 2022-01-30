@@ -2,13 +2,13 @@ package com.philodelight.dao;
 
 import com.philodelight.model.User;
 
+import java.util.List;
+
 public interface UserDao<T> {
     
-    User find(Long id);
+    List<T> list();
     
     void create(T t);
-    
-    void save(User user);
     
     void update(T t, int id);
     

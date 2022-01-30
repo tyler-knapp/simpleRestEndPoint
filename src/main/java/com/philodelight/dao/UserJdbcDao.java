@@ -1,42 +1,46 @@
 package com.philodelight.dao;
 
 import com.philodelight.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
-public class UserJdbcDao implements UserDao{
+import java.util.List;
+
+@Component
+public class UserJdbcDao implements UserDao<User>{
     
+    private static final Logger logger = LoggerFactory.getLogger(UserJdbcDao.class);
     private JdbcTemplate jdbcTemplate;
     
     public UserJdbcDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
     
-    private User RowMapper(){
+    RowMapper<User> rowMapper = (rs, rowNum) -> {
         User user = new User();
-        user.setFirstName("Goofy");
+        user.setId(rs.getInt("id"));
+        user.setFirstName(rs.getString("first_name"));
+        user.setLastName(rs.getString("last_name"));
         return user;
-    }
+    };
     
     @Override
-    public User find(Long id) {
-        String sql = "SELECT first_name, last_name FROM users WHERE id = ?";
-        //int row = jdbcTemplate.query(sql, RowMapper.class );
+    public List<User> list() {
+        String sql = "SELECT id, first_name, last_name FROM users";
+        jdbcTemplate.query(sql, rowMapper);
         return null;
     }
     
     @Override
-    public void create(Object o) {
+    public void create(User user) {
     
     }
     
     @Override
-    public void save(User user) {
-    
-    }
-    
-    @Override
-    public void update(Object o, int id) {
+    public void update(User user, int id) {
     
     }
     
