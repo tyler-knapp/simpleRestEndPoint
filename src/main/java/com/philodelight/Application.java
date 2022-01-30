@@ -18,13 +18,7 @@ public class Application {
 	}
 	
 	public static void main(String[] args) {
-		
-//		System.out.println("------------------------All USERS ---------------------");
-//		List<User> users = dao.list();
-//		users.forEach(System.out::println);
-		
-		
-		
+
 		SpringApplication.run(Application.class, args);
 
 		String jdbcUrl = "jdbc:postgresql://localhost:5432/Contacts";
@@ -35,6 +29,10 @@ public class Application {
 			
 			Connection jdbcConnection = DriverManager.getConnection(jdbcUrl, username, password);
 			System.out.println("Connection to Postgres Successful");
+			
+			System.out.println("------------------------All USERS ---------------------");
+		List<User> users = dao.list();
+		users.forEach(System.out::println);
 
 			String sql = "SELECT * FROM users";
 			Statement statement = jdbcConnection.createStatement();
