@@ -2,11 +2,15 @@ package com.philodelight.dao;
 
 import com.philodelight.model.User;
 
-public interface UserDao {
+public interface UserDao<T> {
     
-    public User find(Long id);
+    User find(Long id);
     
-    public void save(User user);
+    void create(T t);
     
-    public void delete(User user);
+    void save(User user);
+    
+    void update(T t, int id);
+    
+    void delete(int id);
 }

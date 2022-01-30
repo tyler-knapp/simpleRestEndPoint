@@ -6,6 +6,10 @@ public class User {
     String lastName;
     double id;
     
+    public User(){
+    
+    }
+    
     public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
