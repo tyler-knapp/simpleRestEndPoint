@@ -1,14 +1,29 @@
 package com.philodelight;
 
+import com.philodelight.dao.UserDao;
+import com.philodelight.model.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.sql.*;
+import java.util.List;
 
 @SpringBootApplication
 public class Application {
-
+	
+	private static UserDao<User> dao;
+	
+	public Application(UserDao<User> dao) {
+		this.dao = dao;
+	}
+	
 	public static void main(String[] args) {
+		
+//		System.out.println("------------------------All USERS ---------------------");
+//		List<User> users = dao.list();
+//		users.forEach(System.out::println);
+		
+		
 		
 		SpringApplication.run(Application.class, args);
 

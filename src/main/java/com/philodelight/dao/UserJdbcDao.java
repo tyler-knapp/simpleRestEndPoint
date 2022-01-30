@@ -30,8 +30,7 @@ public class UserJdbcDao implements UserDao<User>{
     @Override
     public List<User> list() {
         String sql = "SELECT id, first_name, last_name FROM users";
-        jdbcTemplate.query(sql, rowMapper);
-        return null;
+        return jdbcTemplate.query(sql, rowMapper);
     }
     
     @Override

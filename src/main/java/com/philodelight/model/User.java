@@ -7,7 +7,6 @@ public class User {
     double id;
     
     public User(){
-    
     }
     
     public User(String firstName, String lastName) {
