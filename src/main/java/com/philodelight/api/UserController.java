@@ -10,7 +10,7 @@ public class UserController {
     
     @RequestMapping("/users")
     public String home(){
-        return "Hello from Spring Boot";
+        return "Boot me up y'all";
     }
     
 

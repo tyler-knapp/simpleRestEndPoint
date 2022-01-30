@@ -10,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class DemoApplicationTests {
 
+	
+	
 	@Test
 	void contextLoads() {
 	}
@@ -17,8 +19,8 @@ class DemoApplicationTests {
 	//This user can probably come in a before block?
 	@Test
 	public void i_create_a_user_instance() {
-		User user = new User();
-		Assertions.assertNotNull(user);
+		User user = new User("Winnie", "Pooh");
+		Assertions.assertEquals("Winnie", user.getFirstName());
 	}
 	
 	
