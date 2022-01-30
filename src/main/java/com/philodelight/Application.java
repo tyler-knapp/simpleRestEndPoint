@@ -29,10 +29,8 @@ public class Application {
 				int id = result.getInt("id");
 				String firstName = result.getString("first_name");
 				String lastName = result.getString("last_name");
-
 				System.out.println( id + " " + firstName + " " + lastName );
 			}
-
 			jdbcConnection.close();
 
 		} catch(SQLException e) {

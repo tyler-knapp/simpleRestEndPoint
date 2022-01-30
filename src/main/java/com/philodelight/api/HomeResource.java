@@ -1,4 +1,4 @@
-package com.philodelight;
+package com.philodelight.api;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
