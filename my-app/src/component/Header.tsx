@@ -1,9 +1,10 @@
 import * as React from "react";
+import '../index.css'
 
-
-function Header(){
+//props are a way to pass data to component from parent. Static data.
+function Header(props){
     return (
-        <h1>This Is The Header</h1>
+        <h1 className="primary-header">{props.text}</h1>
     );
 }
 
