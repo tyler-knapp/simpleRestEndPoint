@@ -1,5 +1,4 @@
 const path = require('path');
-const { isBundle } = require('typescript');
 
 module.exports = {
     entry: "./src/index.tsx",
