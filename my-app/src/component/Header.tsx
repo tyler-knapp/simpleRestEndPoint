@@ -1,14 +1,10 @@
 import * as React from "react";
-import {AppBar, Toolbar, Typography} from '@material-ui/core';
+
 
 function Header(){
     return (
-      <AppBar position='static'>
-         <Toolbar>
-             <Typography>React Navbar Example</Typography>
-         </Toolbar>
-      </AppBar>
-
+        <h1>This Is The Header</h1>
     );
 }
+
 export default Header;
