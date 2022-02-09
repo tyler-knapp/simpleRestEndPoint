@@ -1,15 +1,19 @@
 import * as React from 'react';
-import {Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Blogs from './blogs';
+import Home from './home'
+import Contact from './contact';
+
 
 function NavBar() {
     return(
-        <div>
-            <Routes>
-                <Route>
-
-                </Route>
-            </Routes>
-        </div>
+        <BrowserRouter>
+      <Routes>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
     )
 }
 

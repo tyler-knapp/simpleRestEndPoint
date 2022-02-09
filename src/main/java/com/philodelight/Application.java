@@ -31,8 +31,8 @@ public class Application {
 			System.out.println("Connection to Postgres Successful");
 			
 			System.out.println("------------------------All USERS ---------------------");
-		List<User> users = dao.list();
-		users.forEach(System.out::println);
+			List<User> users = dao.list();
+			users.forEach(System.out::println);
 
 			String sql = "SELECT * FROM users";
 			Statement statement = jdbcConnection.createStatement();
