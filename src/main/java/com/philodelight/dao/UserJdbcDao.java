@@ -13,7 +13,7 @@ import java.util.List;
 public class UserJdbcDao implements UserDao<User>{
     
     private static final Logger logger = LoggerFactory.getLogger(UserJdbcDao.class);
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
     
     public UserJdbcDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

@@ -1,6 +1,5 @@
 package com.philodelight.api;
 
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,4 +18,6 @@ public class HomeResource {
     public String getFoosBySimplePath() {
         return "Get some Foos";
     }
+    
+    
 }
